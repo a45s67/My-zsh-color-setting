@@ -349,9 +349,9 @@
 
   #####################################[ vcs: git status ]######################################
   # Version control system colors.
-  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=2
+  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=
   typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=2
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=
   typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=3
   typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=8
 
@@ -382,7 +382,7 @@
 
     # Styling for different parts of Git status.
     local       meta='%228F' # white foreground
-    local      clean='%228F' # black foreground
+    local      clean='%2F' # black foreground
     local   modified='%197F' # black foreground
     local  untracked='%214F' # black foreground
     local conflicted='%1F' # red foreground
