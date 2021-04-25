@@ -159,6 +159,10 @@
   fi
 
 
+  typeset POWERLEVEL9K_VCS_LEFT_SEGMENT_SEPARATOR=
+  typeset POWERLEVEL9K_VCS_RIGHT_SEGMENT_SEPARATOR=
+  typeset POWERLEVEL9K_STATUS_LEFT_SEGMENT_SEPARATOR=
+  typeset POWERLEVEL9K_STATUS_RIGHT_SEGMENT_SEPARATOR=
   # Separator between same-color segments on the left.
   typeset -g POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR='\uE0B1'
   # Separator between same-color segments on the right.
