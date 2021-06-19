@@ -79,6 +79,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 plugins+=(zsh-vi-mode)
+plugins+=(zsh_reload)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -114,3 +115,5 @@ source $ZSH/oh-my-zsh.sh
 [[ -s /home/fish/.autojump/etc/profile.d/autojump.sh ]] && source /home/fish/.autojump/etc/profile.d/autojump.sh
 
 autoload -U compinit && compinit -u
+alias nv='nvim'
+source ~/github/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
