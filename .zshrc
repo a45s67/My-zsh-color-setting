@@ -79,7 +79,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 plugins+=(zsh-vi-mode)
-plugins+=(zsh_reload)
+plugins+=(zsh_reload zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
