@@ -117,3 +117,8 @@ source $ZSH/oh-my-zsh.sh
 autoload -U compinit && compinit -u
 alias nv='nvim'
 source ~/github/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+alias tmux='tmux -2'
+
+# ~/github/nyancat/src/nyancat 
+
