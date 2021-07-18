@@ -80,6 +80,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git)
 plugins+=(zsh-vi-mode)
 plugins+=(zsh_reload zsh-autosuggestions)
+plugins+=(gitfast)
 
 source $ZSH/oh-my-zsh.sh
 
