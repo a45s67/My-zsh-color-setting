@@ -80,7 +80,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git)
 plugins+=(zsh-vi-mode)
 plugins+=(zsh_reload zsh-autosuggestions)
-plugins+=(gitfast)
+# plugins+=(gitfast)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -117,9 +117,13 @@ source $ZSH/oh-my-zsh.sh
 
 autoload -U compinit && compinit -u
 alias nv='nvim'
+source ~/github/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source ~/github/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias tmux='tmux -2'
+
+# laravel
+PATH=$HOME/.config/composer/vendor/bin:$PATH
 
 # ~/github/nyancat/src/nyancat 
 
