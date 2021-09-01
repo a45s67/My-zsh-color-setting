@@ -117,13 +117,14 @@ source $ZSH/oh-my-zsh.sh
 
 autoload -U compinit && compinit -u
 alias nv='nvim'
-source ~/github/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+# source ~/github/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source ~/github/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias tmux='tmux -2'
 
 # laravel
 PATH=$HOME/.config/composer/vendor/bin:$PATH
+PATH=$HOME/.local/bin:$PATH
 
 # ~/github/nyancat/src/nyancat 
 
