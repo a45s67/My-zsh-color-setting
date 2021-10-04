@@ -78,7 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
-plugins+=(zsh-vi-mode)
+# plugins+=(zsh-vi-mode)
 plugins+=(zsh_reload zsh-autosuggestions)
 # plugins+=(gitfast)
 
@@ -128,3 +128,5 @@ PATH=$HOME/.local/bin:$PATH
 
 # ~/github/nyancat/src/nyancat 
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
