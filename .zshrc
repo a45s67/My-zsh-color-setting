@@ -80,6 +80,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git)
 # plugins+=(zsh-vi-mode)
 plugins+=(zsh_reload zsh-autosuggestions)
+plugins+=(fasd)
 # plugins+=(gitfast)
 
 source $ZSH/oh-my-zsh.sh
@@ -113,7 +114,7 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-[[ -s /home/fish/.autojump/etc/profile.d/autojump.sh ]] && source /home/fish/.autojump/etc/profile.d/autojump.sh
+# [[ -s /home/fish/.autojump/etc/profile.d/autojump.sh ]] && source /home/fish/.autojump/etc/profile.d/autojump.sh
 
 autoload -U compinit && compinit -u
 alias nv='nvim'

@@ -1,0 +1,3 @@
+set drawbox
+map e $nvim "$f"
+map . $nvim
