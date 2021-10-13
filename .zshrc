@@ -81,7 +81,7 @@ plugins=(git)
 # plugins+=(zsh-vi-mode)
 plugins+=(zsh_reload zsh-autosuggestions)
 plugins+=(fasd)
-# plugins+=(gitfast)
+plugins+=(gitfast)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -131,3 +131,4 @@ PATH=$HOME/.local/bin:$PATH
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+bindkey  | rg fzf
