@@ -130,7 +130,6 @@ PATH=$HOME/.local/bin:$PATH
 
 # ~/github/nyancat/src/nyancat 
 
-
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # ref: https://github.com/junegunn/fzf/issues/634
@@ -139,6 +138,9 @@ export FZF_CTRL_T_COMMAND='rg --hidden --no-ignore -l ""'
 
 # g - go manager
 export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+
+# fasd
+eval "$(fasd --init auto)"
 
 # lfcd
 LFCD="$HOME/.local/bin/lfcd.sh"
