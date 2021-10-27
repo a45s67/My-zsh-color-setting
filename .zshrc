@@ -118,6 +118,7 @@ source $ZSH/oh-my-zsh.sh
 
 autoload -U compinit && compinit -u
 alias nv='nvim'
+alias j='z'
 # source ~/github/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source ~/github/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
