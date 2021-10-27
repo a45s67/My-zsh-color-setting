@@ -131,5 +131,9 @@ PATH=$HOME/.local/bin:$PATH
 # ~/github/nyancat/src/nyancat 
 
 
+# fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-bindkey  | rg fzf
+# ref: https://github.com/junegunn/fzf/issues/634
+export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
+export FZF_CTRL_T_COMMAND='rg --hidden --no-ignore -l ""'
+
