@@ -137,3 +137,11 @@ PATH=$HOME/.local/bin:$PATH
 export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
 export FZF_CTRL_T_COMMAND='rg --hidden --no-ignore -l ""'
 
+# g - go manager
+export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+
+# lfcd
+LFCD="$HOME/.local/bin/lfcd.sh"
+if [[ -f "$LFCD" ]]; then
+    source "$LFCD"
+fi
