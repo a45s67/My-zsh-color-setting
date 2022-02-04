@@ -15,7 +15,7 @@ export ZSH="/home/fish/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -79,8 +79,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 # plugins+=(zsh-vi-mode)
-plugins+=(zsh_reload zsh-autosuggestions)
-plugins+=(fasd)
+plugins+=(zsh-autosuggestions)
 plugins+=(gitfast)
 
 source $ZSH/oh-my-zsh.sh
@@ -127,6 +126,8 @@ alias tmux='tmux -2'
 # laravel
 PATH=$HOME/.config/composer/vendor/bin:$PATH
 PATH=$HOME/.local/bin:$PATH
+# cmake
+PATH=$HOME/.local/bin/cmake-3.22.2-linux-x86_64/bin:$PATH
 
 # ~/github/nyancat/src/nyancat 
 
@@ -139,11 +140,13 @@ export FZF_CTRL_T_COMMAND='rg --hidden --no-ignore -l ""'
 # g - go manager
 export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
 
-# fasd
-eval "$(fasd --init auto)"
-
 # lfcd
 LFCD="$HOME/.local/bin/lfcd.sh"
 if [[ -f "$LFCD" ]]; then
     source "$LFCD"
 fi
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+eval "$(lua ~/github/z.lua/z.lua --init zsh)"
+
+[[ -s "/home/fish/.gvm/scripts/gvm" ]] && source "/home/fish/.gvm/scripts/gvm"
+gvm use go1.17
