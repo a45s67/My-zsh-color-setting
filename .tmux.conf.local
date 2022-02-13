@@ -431,7 +431,6 @@ tmux_conf_update_plugins_on_reload=true
 set -g default-terminal "xterm-256color"
 set -g prefix F12
 
-
 setw -g mode-keys vi
-
+bind-key x kill-pane
 
