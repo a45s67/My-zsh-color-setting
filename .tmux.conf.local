@@ -437,3 +437,4 @@ set -g prefix F12
 setw -g mode-keys vi
 bind-key x kill-pane
 
+bind \\ split-window -h
