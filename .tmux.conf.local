@@ -429,6 +429,9 @@ tmux_conf_update_plugins_on_reload=true
 
 # 256-color reference to : https://www.reddit.com/r/bashonubuntuonwindows/comments/6zxvr5/wsl_terminal_screen_256_colors/
 set -g default-terminal "xterm-256color"
+# unbind C-a https://github.com/gpakosz/.tmux/issues/53
+set -gu prefix2
+unbind C-a
 set -g prefix F12
 
 setw -g mode-keys vi
