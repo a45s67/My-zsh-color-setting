@@ -40,11 +40,15 @@ sudo apt install lua5.3
 ```
 env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
 ```
+### .tmux 
+```
+git clone https://github.com/gpakosz/.tmux.git "~/github/tmux"
+ln ~/github/tmux/.tmux.conf ~/.tmux.conf
+```
 
 ## link settings
 ln  .p10k.zsh ~/.p10k.zsh
 ln  .zshrc ~/.zshrc
-ln  .tmux.conf ~/.tmux.conf
 ln  .tmux.conf.local ~/.tmux.conf.local
 ln  .zprofile ~/.zprofile
 
