@@ -102,7 +102,7 @@ cmd zip ${{
 map e $nvim "$f"
 map . $nvim
 
-set icons on
+# set icons on
 set drawbox
 
 map a push %mkdir<space>

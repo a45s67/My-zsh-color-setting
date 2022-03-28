@@ -47,6 +47,7 @@ ln ~/github/tmux/.tmux.conf ~/.tmux.conf
 ```
 
 ## link settings
+```
 ln  .p10k.zsh ~/.p10k.zsh
 ln  .zshrc ~/.zshrc
 ln  .tmux.conf.local ~/.tmux.conf.local
@@ -55,5 +56,7 @@ ln  .zprofile ~/.zprofile
 md ~/.config/lf
 ln lfrc ~/.config/lf/lfrc
 
+ln lfcd ~/.local/bin/lfcd.sh
+```
 
 git clone https://github.com/a45s67/nvim-note.git "~/.config/nvim"
