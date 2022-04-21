@@ -122,6 +122,7 @@ alias j='z'
 source ~/github/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias tmux='tmux -2'
+alias t='tmux -2'
 
 # laravel
 PATH=$HOME/.config/composer/vendor/bin:$PATH
