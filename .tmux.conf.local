@@ -439,3 +439,7 @@ setw -g mode-keys vi
 bind-key x kill-pane
 
 bind \\ split-window -h
+
+# Plugin
+set -g @plugin 'fcsonline/tmux-thumbs'
+run-shell ~/.tmux/plugins/tmux-thumbs/tmux-thumbs.tmux
