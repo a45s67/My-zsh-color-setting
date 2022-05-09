@@ -440,6 +440,16 @@ bind-key x kill-pane
 
 bind \\ split-window -h
 
-# Plugin
-set -g @plugin 'fcsonline/tmux-thumbs'
-run-shell ~/.tmux/plugins/tmux-thumbs/tmux-thumbs.tmux
+# Fzf session switcher: https://gist.github.com/thugcee/41d1ba786fa5e66167ed6ee45e4f6346
+bind-key f run-shell -b ~/github/gist/tmux-switch-pane.sh
+
+# Plugin tmux-fzf
+TMUX_FZF_LAUNCH_KEY="p"
+set -g @plugin 'sainnhe/tmux-fzf'
+
+# Plugin extrakto for copy paste
+set -g @extrakto_key 'space'
+set -g @extrakto_copy_key "space"
+set -g @extrakto_insert_key "enter"
+set -g @extrakto_popup_size "50%"
+set -g @plugin 'laktak/extrakto'
