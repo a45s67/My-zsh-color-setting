@@ -246,17 +246,21 @@ download_speed_icon=''
 upload_status="$upload_speed_icon #{upload_speed}"
 download_status="$download_speed_icon #{download_speed}"
 
-tmux_conf_theme_status_left=" ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} "
-tmux_conf_theme_status_right="$download_status $upload_status #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} | %R - %d %b | #{username}#{root} | #{hostname} "
+tmux_conf_theme_status_left=" ❐ #S "
+tmux_conf_theme_status_right="#{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} | #{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} , %R - %d %b | #{username}#{root} | #{hostname} "
 
 # status left style
-tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_5,$tmux_conf_theme_colour_10,$tmux_conf_theme_colour_8"
-tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_11"
+status_left_fg="yellow,white"
+status_left_bg="black,black"
+tmux_conf_theme_status_left_fg=$status_left_fg
+tmux_conf_theme_status_left_bg=$status_left_bg
 tmux_conf_theme_status_left_attr="bold,none,none"
 
 # status right style
-tmux_conf_theme_status_right_fg="$net_speed_colour,$tmux_conf_theme_colour_12,$tmux_conf_theme_colour_9,$tmux_conf_theme_colour_9"
-tmux_conf_theme_status_right_bg="$tmux_conf_theme_colour_15,$tmux_conf_theme_colour_15,$tmux_conf_theme_colour_15,$tmux_conf_theme_colour_15"
+status_right_fg="white,white,lightgreen,lightgreen"
+status_right_bg="default,default,default,default"
+tmux_conf_theme_status_right_fg=$status_right_fg
+tmux_conf_theme_status_right_bg=$status_right_bg
 tmux_conf_theme_status_right_attr="none,none,none,bold"
 
 # pairing indicator
@@ -329,7 +333,8 @@ tmux_conf_battery_status_discharging="↓"    # U+2193
 
 # clock style (when you hit <prefix> + t)
 # you may want to use %I:%M %p in place of %R in tmux_conf_theme_status_right
-tmux_conf_theme_clock_colour="$tmux_conf_theme_colour_clock"
+clock_colour=white
+tmux_conf_theme_clock_colour=$colck_colour
 tmux_conf_theme_clock_style="24"
 
 
