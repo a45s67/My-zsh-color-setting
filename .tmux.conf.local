@@ -71,7 +71,7 @@ tmux_conf_theme_window_bg="default"
 # highlight focused pane (tmux >= 2.1), possible values are:
 #   - true
 #   - false (default)
-tmux_conf_theme_highlight_focused_pane=false
+# tmux_conf_theme_highlight_focused_pane=false
 # focused pane colours:
 tmux_conf_theme_focused_pane_bg="$tmux_conf_theme_colour_2"
 
@@ -99,7 +99,7 @@ tmux_conf_theme_message_attr="bold"
 
 # status line command style (<prefix> : Escape)
 message_command_fg_color=black
-message_command_bg_color=gray
+message_command_bg_color=colour8 # grey
 tmux_conf_theme_message_command_fg=$message_command_fg_color
 tmux_conf_theme_message_command_bg=$message_command_bg_color
 tmux_conf_theme_message_command_attr="bold"
@@ -142,7 +142,7 @@ tmux_conf_theme_status_attr="none"
 #     - #{hostname_full_ssh}
 #     - #{username}
 #     - #{username_ssh}
-window_status_fg=gray
+window_status_fg=colour8 # grey
 window_status_bg=default
 tmux_conf_theme_window_status_fg=$window_status_fg
 tmux_conf_theme_window_status_bg=$window_status_bg
@@ -185,7 +185,7 @@ tmux_conf_theme_window_status_bell_bg=$window_status_bell_bg
 tmux_conf_theme_window_status_bell_attr="blink,bold"
 
 # window last status style
-window_status_last_fg=lightblue
+window_status_last_fg=brightblue
 window_status_last_bg=default
 tmux_conf_theme_window_status_last_fg=$window_status_last_fg
 tmux_conf_theme_window_status_last_bg=$window_status_last_bg
