@@ -17,6 +17,12 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 pip install pynvim
 ```
+
+### build-essential
+```
+sudo apt install build-essential
+```
+
 ### node
 ```
 curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
@@ -29,11 +35,27 @@ bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/bins
 gvm install go1.4 -B
 gvm use go1.4
 export GOROOT_BOOTSTRAP=$GOROOT
-gvm install go1.17
+gvm install go1.19
 ```
 ### lua5.3
 ```
 sudo apt install lua5.3
+```
+
+### rg 
+```
+sudo apt-get install ripgrep
+```
+
+### fzf
+```
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+```
+
+### lazygit
+```
+go install github.com/jesseduffield/lazygit@latest
 ```
 
 ### lf
@@ -42,8 +64,13 @@ env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
 ```
 ### .tmux 
 ```
-git clone https://github.com/gpakosz/.tmux.git "~/github/tmux"
+git clone https://github.com/gpakosz/.tmux.git ~/github/tmux
 ln ~/github/tmux/.tmux.conf ~/.tmux.conf
+```
+
+### z.lua
+```
+git clone https://github.com/skywind3000/z.lua.git ~/github/z.lua
 ```
 
 ## link settings
