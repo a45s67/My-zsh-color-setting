@@ -149,7 +149,7 @@ fi
 eval "$(lua ~/github/z.lua/z.lua --init zsh)"
 
 [[ -s "/home/fish/.gvm/scripts/gvm" ]] && source "/home/fish/.gvm/scripts/gvm"
-gvm use go1.17
+gvm use go1.19 > /dev/null
 
 # Default editor (https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits)
 export VISUAL=nvim
