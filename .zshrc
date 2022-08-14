@@ -80,6 +80,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 # plugins+=(zsh-vi-mode)
+plugins+=(zsh-syntax-highlighting)
 plugins+=(zsh-autosuggestions)
 plugins+=(gitfast)
 
@@ -120,9 +121,6 @@ autoload -U compinit && compinit -u
 alias nv='nvim'
 alias py='python3'
 alias j='z'
-# source ~/github/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-source ~/github/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 alias tmux='tmux -2'
 alias t='tmux -2'
 
