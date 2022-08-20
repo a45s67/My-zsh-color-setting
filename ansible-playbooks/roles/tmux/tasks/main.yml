@@ -1,0 +1,18 @@
+---
+  - name: Install tmux
+
+    shell: |
+      cd /tmp
+      wget https://github.com/tmux/tmux/releases/download/3.3a/tmux-3.3a.tar.gz
+      tar -zxf tmux-*.tar.gz
+      cd tmux-*/
+      ./configure
+      make && sudo make install
+      sudo apt remove tmux
+      sudo mv ./tmux /usr/bin/tmux
+
+  - name: Install oh my tmux
+    shell: |
+      git clone https://github.com/gpakosz/.tmux.git ~/github/tmux
+      ln ~/github/tmux/.tmux.conf ~/.tmux.conf
+
