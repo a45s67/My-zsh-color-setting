@@ -1,0 +1,18 @@
+---
+  - name: Install nvim
+    command:
+      argv:
+        - mkdir ~/.local/bin
+        - curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+        - chmod u+x nvim.appimage
+        - sudo mv nvim.appimage /usr/bin/nvim
+
+  - name: Install vim-plug
+    command:
+      argv:
+        - sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+  - name: Install python nvim module
+    pip:
+      name: pynvim
+
