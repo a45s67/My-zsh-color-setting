@@ -121,8 +121,8 @@ autoload -U compinit && compinit -u
 alias nv='nvim'
 alias py='python3'
 alias j='z'
-alias tmux='tmux -2'
 alias t='tmux -2'
+alias lg='lazygit'
 
 # laravel
 PATH=$HOME/.config/composer/vendor/bin:$PATH
