@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/fish/.oh-my-zsh"
+export ZSH=~/.oh-my-zsh # NOTE: Don't put quotes("") beside path. See https://superuser.com/a/1618359
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -148,7 +148,7 @@ if [[ -f "$LFCD" ]]; then
 fi
 eval "$(lua ~/github/z.lua/z.lua --init zsh)"
 
-[[ -s "/home/fish/.gvm/scripts/gvm" ]] && source "/home/fish/.gvm/scripts/gvm"
+[[ -s ~/.gvm/scripts/gvm ]] && source ~/.gvm/scripts/gvm
 gvm use go1.19 > /dev/null
 
 # Default editor (https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits)
