@@ -1,20 +1,40 @@
 ---
-  - name: Link settings
-    shell: |
-      cd ~
-      mkdir github
-      cd github
-      git clone https://github.com/a45s67/zsh-tmux-setting.git
-      cd zsh-tmux-setting
+  - name: Clone settings repository
+    git:
+      repo: https://github.com/a45s67/zsh-tmux-setting.git
+      dest: ~/github/zsh-tmux-setting
 
-      rm ~/.p10k.zsh
-      ln .p10k.zsh ~/.p10k.zsh
-      rm ~/.zshrc
-      ln .zshrc ~/.zshrc 
-      ln .tmux.conf.local ~/.tmux.conf.local
-      rm ~/.zprofile
-      ln .zprofile ~/.zprofile
+  - name: Set configure files (zsh-config, p10k, tmux)
+    file:
+      src: '~/github/zsh-tmux-setting/{{ item }}'
+      dest: '~/{{ item }}'
+      state: hard
+      force: yes
+    loop:
+      - '.p10k.zsh'
+      - '.zshrc'
+      - '.tmux.conf.local'
+      - '.zprofile'
 
-      md ~/.config/lf
-      ln lfrc ~/.config/lf/lfrc
-      ln lfcd ~/.local/bin/lfcd.sh
+  - name: Set configure files (nvim)
+    git:
+      repo: https://github.com/a45s67/nvim-note.git
+      dest: ~/.config/nvim
+
+  - name: Create directories for configure files (lf)
+    file:
+      path: '{{ item }}'
+      state: directory
+    loop:
+      - '~/.local/bin'
+      - '~/.config/lf'
+
+  - name: Set configure files (lf)
+    file:
+      src: '{{ item.src }}'
+      dest: '{{ item.dest }}'
+      state: hard
+      force: yes
+    loop:
+      - { src: '~/github/zsh-tmux-setting/lfcd.sh', dest: '~/.local/bin/lfcd.sh'}
+      - { src: '~/github/zsh-tmux-setting/lfrc', dest: '~/.config/lf/lfrc'}
