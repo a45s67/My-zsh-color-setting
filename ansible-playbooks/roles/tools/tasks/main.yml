@@ -1,29 +1,24 @@
 ---
   - name: Install rg
     apt:
-      name:  riggrep
+      name:  ripgrep
       update_cache: yes
 
   - name: Install fzf
     shell: |
       git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-      ~/.fzf/install
+      yes | ~/.fzf/install
 
-
-  - name: Install lazygit
+  - name: Install lazygit, lf
     shell: |
+      source ~/.gvm/scripts/gvm
       go install github.com/jesseduffield/lazygit@latest
-
-  - name: Install lf
-    shell: |
       env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
-
-  - name: Install oh my tmux
-    shell: |
-      git clone https://github.com/gpakosz/.tmux.git ~/github/tmux
-ln ~/github/tmux/.tmux.conf ~/.tmux.conf
+    args:
+      executable: /bin/bash
 
   - name: Install z.lua
-    shell: |
-      git clone https://github.com/skywind3000/z.lua.git ~/github/z.lua
+    git:
+      repo: https://github.com/skywind3000/z.lua.git
+      dest: ~/github/z.lua
 
