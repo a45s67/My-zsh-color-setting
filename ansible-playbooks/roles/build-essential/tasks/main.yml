@@ -3,3 +3,12 @@
     apt:
       name: build-essential
       update_cache: yes
+
+  - name: Install libs for building tmux
+    apt:
+      name: 
+        - libevent-dev 
+        - ncurses-dev
+        - bison 
+        - pkg-config
+      update_cache: yes
