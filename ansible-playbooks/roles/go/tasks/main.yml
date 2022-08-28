@@ -1,11 +1,15 @@
 ---
-  - name: Install go
-    command:
-      argv:
-        - bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-        - gvm install go1.4 -B
-        - gvm use go1.4
-        - export GOROOT_BOOTSTRAP=$GOROOT
-        - gvm install go1.19
-        - gvm use go1.19 --default
+  - name: Install gvm
+    shell: |
+      rm -rf ~/.gvm
+      /bin/bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+    args:
+      executable: /bin/bash
 
+  - name: Install go
+    shell: |
+      source ~/.gvm/scripts/gvm
+      gvm install go1.19 -B
+      gvm use go1.19 --default
+    args:
+      executable: /bin/bash
