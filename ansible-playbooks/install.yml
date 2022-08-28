@@ -1,0 +1,34 @@
+- name: Test connection
+  hosts: all
+  tasks:
+    - name: Ping
+      ping:
+    - name: Show whoami
+      command: whoami
+      register: whoami
+    - debug: var=whoami.stdout 
+
+- name: Initialize directory for github repos
+  hosts: all
+  tasks:
+    - name: Create ~/github
+      file:
+        path: "~/github"
+        state: directory
+
+- name: Installing
+  hosts: all
+  become: yes
+  roles:
+    - nvim
+    - zsh
+    - settings
+    - tools
+    - tmux
+    - node
+    - lua
+    - curl
+    - git
+    - pip
+    - build-essential
+    - go
