@@ -1,7 +1,11 @@
 ---
+  - name: Clean gvm files
+    file:
+      path: ~/.gvm
+      state: absent
+
   - name: Install gvm
     shell: |
-      rm -rf ~/.gvm
       /bin/bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
     args:
       executable: /bin/bash
