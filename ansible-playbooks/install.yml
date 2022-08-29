@@ -22,13 +22,7 @@
   roles:
     - nvim
     - zsh
-    - settings
     - tools
     - tmux
     - node
-    - lua
-    - curl
-    - git
-    - pip
-    - build-essential
-    - go
+    - settings
