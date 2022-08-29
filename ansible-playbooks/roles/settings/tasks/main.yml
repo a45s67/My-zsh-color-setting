@@ -21,6 +21,12 @@
       repo: https://github.com/a45s67/nvim-note.git
       dest: ~/.config/nvim
 
+  - name: Apply nvim plugins
+    shell: |
+      nvim --headless +PlugInstall +qa
+      nvim +UpdateRemotePlugins +qa
+      # Reference: https://github.com/junegunn/vim-plug/issues/675#issuecomment-1067990970
+
   - name: Create directories for configure files (lf)
     file:
       path: '{{ item }}'
