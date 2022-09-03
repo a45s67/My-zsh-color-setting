@@ -161,12 +161,19 @@ tmux_conf_theme_window_status_format="#I #W#{?window_bell_flag,🔔,}#{?window_z
 #     - #{hostname_full_ssh}
 #     - #{username}
 #     - #{username_ssh}
-window_status_current_fg=yellow
-window_status_current_bg=black
-tmux_conf_theme_window_status_current_fg=$window_status_current_fg
-tmux_conf_theme_window_status_current_bg=$window_status_current_bg
+window_status_current_fg=colour221
+window_status_current_bg=colour52 # Dont use color literal (e.g. "black") because it would be brighted when applied to separator fg.
+tmux_conf_theme_window_status_current_fg=default
+tmux_conf_theme_window_status_current_bg=default
 tmux_conf_theme_window_status_current_attr="bold"
-tmux_conf_theme_window_status_current_format="#W🌠 #{?window_bell_flag,🔔,}#{?window_zoomed_flag,🔍,}"
+
+separator_color_style="#[fg=$window_status_current_bg,bg=default,bold]"
+status_current_color_style="#[fg=$window_status_current_fg,bg=$window_status_current_bg]"
+
+window_status_current_prefix="${separator_color_style}\uE0B6$status_current_color_style"
+window_status_current_suffix="$separator_color_style\uE0B4"
+
+tmux_conf_theme_window_status_current_format="${window_status_current_prefix}#I #W🌠#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🔍,}${window_status_current_suffix}"
 #tmux_conf_theme_window_status_current_format="#{circled_window_index} #W"
 #tmux_conf_theme_window_status_current_format="#I #W#{?window_zoomed_flag,🔍,}"
 
@@ -422,28 +429,28 @@ tmux_conf_update_plugins_on_reload=true
 # ======================= My Setting ===================================================
 
 # 256-color reference to : https://www.reddit.com/r/bashonubuntuonwindows/comments/6zxvr5/wsl_terminal_screen_256_colors/
-set -g default-terminal "xterm-256color"
+    set -g default-terminal "xterm-256color"
 # unbind C-a https://github.com/gpakosz/.tmux/issues/53
-set -gu prefix2
-unbind C-a
-set -g prefix `
-bind '`' send-keys '`'
+        set -gu prefix2
+        unbind C-a
+        set -g prefix `
+        bind '`' send-keys '`'
 
-setw -g mode-keys vi
-bind-key x kill-pane
+        setw -g mode-keys vi
+        bind-key x kill-pane
 
-bind \\ split-window -h
+        bind \\ split-window -h
 
 # Fzf session switcher: https://gist.github.com/thugcee/41d1ba786fa5e66167ed6ee45e4f6346
-bind-key f run-shell -b ~/github/gist/tmux-switch-pane.sh
+        bind-key f run-shell -b ~/github/gist/tmux-switch-pane.sh
 
 # Plugin tmux-fzf
-TMUX_FZF_LAUNCH_KEY="p"
-set -g @plugin 'sainnhe/tmux-fzf'
+        TMUX_FZF_LAUNCH_KEY="p"
+        set -g @plugin 'sainnhe/tmux-fzf'
 
 # Plugin extrakto for copy paste
-set -g @extrakto_key 'space'
-set -g @extrakto_copy_key "space"
-set -g @extrakto_insert_key "enter"
-set -g @extrakto_popup_size "50%"
-set -g @plugin 'laktak/extrakto'
+        set -g @extrakto_key 'space'
+        set -g @extrakto_copy_key "space"
+        set -g @extrakto_insert_key "enter"
+        set -g @extrakto_popup_size "50%"
+        set -g @plugin 'laktak/extrakto'
