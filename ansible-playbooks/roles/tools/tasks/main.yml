@@ -1,7 +1,7 @@
 ---
   - name: Install rg
     apt:
-      name:  ripgrep
+      name: ripgrep
       update_cache: yes
 
   - name: Install fzf
@@ -22,3 +22,7 @@
       repo: https://github.com/skywind3000/z.lua.git
       dest: ~/github/z.lua
 
+  - name: Install tmuxp
+    apt:
+      repo: tmuxp
+      update_cache: yes
