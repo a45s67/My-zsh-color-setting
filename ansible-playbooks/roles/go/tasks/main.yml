@@ -1,9 +1,4 @@
 ---
-  - name: Install bison
-    apt:
-      name: bison
-      update_cache: yes
-
   - name: Clean gvm files
     file:
       path: ~/.gvm
