@@ -154,3 +154,5 @@ gvm use go1.19 > /dev/null
 # Default editor (https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits)
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+# Set true color: https://askubuntu.com/questions/1309068/zsh-true-color-disabled-on-wsl2
+export COLORTERM=truecolor
