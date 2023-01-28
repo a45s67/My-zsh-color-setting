@@ -1,0 +1,39 @@
+---
+  - name: Install goph
+    shell: |
+      source ~/.gvm/scripts/gvm
+      gvm use go1.19 --default
+      go install golang.org/x/tools/gopls@latest
+    args:
+      executable: /bin/bash
+
+  - name: Set tmp directory
+    file:
+      path: ~/tmp
+      state: directory
+
+  - name: Set target clangd version
+    set_fact:
+      version: "15.0.6"
+
+  - name: Download clangd
+    get_url:
+      url: 'https://github.com/clangd/clangd/releases/download/{{ version }}/clangd-linux-{{ version }}.zip'
+      dest: ~/tmp/clangd.zip
+
+  - name: Extract clangd zip
+    unarchive:
+      src: ~/tmp/clangd.zip
+      dest: ~/tmp
+      remote_src: yes
+
+  - name: Install clangd.zip
+    copy:
+      src: ~/tmp/clangd_{{ version }}/bin/clangd
+      dest: /usr/bin/clangd
+      remote_src: true
+      mode: '755'
+
+
+
+
