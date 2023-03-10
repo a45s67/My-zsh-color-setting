@@ -21,7 +21,7 @@
 
   - name: Link oh my tmux setting
     file:
-      src: ~/github/tmux/.tmux.conf
+      src: ~/github/.tmux/.tmux.conf
       dest: ~/.tmux.conf
       state: hard
 
