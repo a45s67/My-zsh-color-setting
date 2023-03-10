@@ -1,7 +1,11 @@
 ### Usage
 Just run the command and everything will be settled.
 ```
-ansible-playbook install.yml -i inventory --extra-vars "target_host=127.0.0.1 ansible_port=22"  --extra-vars "ansible_user=user ansible_password=password"
+ansible-playbook install.yml -i inventory --extra-vars "target_host=127.0.0.1 ansible_port=22"  --extra-vars "ansible_user=user ansible_sudo_pass=password" 
+
+# Prevent the password is saved in shell history
+ansible-playbook install.yml -i inventory --extra-vars "target_host=127.0.0.1 ansible_port=22"  --extra-vars "ansible_user=user"  --ask-pass --ask-become-pass
+  
 ```
 ### Tips
 If ones want to test the script with docker, you can refer my steps:
