@@ -1,9 +1,18 @@
 ---
+  - name: Download nvim 
+    get_url:
+      url: https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+      dest: /tmp/nvim
+
   - name: Install nvim
-    shell: |
-      curl -L https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o /tmp/nvim.appimage
-      chmod u+x /tmp/nvim.appimage
-      mv /tmp/nvim.appimage /usr/bin/nvim
+    become: yes
+    become_user: root
+    ansible.builtin.copy:
+      src: /tmp/nvim
+      dest: /usr/bin/nvim
+      owner: root
+      group: root
+      mode: '0755'
 
   - name: Install vim-plug
     shell: |

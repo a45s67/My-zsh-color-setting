@@ -1,5 +1,7 @@
 ---
   - name: Set source of nodejs
+    become: yes
+    become_user: root
     shell: |
      curl -fsSL https://deb.nodesource.com/setup_18.x | bash - 
 
