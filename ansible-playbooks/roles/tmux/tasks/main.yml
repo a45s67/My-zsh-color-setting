@@ -28,5 +28,5 @@
     file:
       src: ~/github/.tmux/.tmux.conf
       dest: ~/.tmux.conf
-      state: hard
+      state: link
 
