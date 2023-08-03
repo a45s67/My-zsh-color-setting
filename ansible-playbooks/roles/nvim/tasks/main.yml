@@ -1,4 +1,9 @@
 ---
+  - name: Install libfuse2 (requirements to run AppImage)
+    become: yes
+    apt:
+      name: libfuse2
+
   - name: Download nvim 
     get_url:
       url: https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
