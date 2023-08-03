@@ -123,6 +123,7 @@ alias py='python3'
 alias j='z'
 alias t='tmux -2'
 alias lg='lazygit'
+alias win-dev='tmuxp load win-dev'
 
 # laravel
 PATH=$HOME/.config/composer/vendor/bin:$PATH
