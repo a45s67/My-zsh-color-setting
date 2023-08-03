@@ -1,5 +1,6 @@
 ---
   - name: Install rg
+    become: true
     apt:
       name: ripgrep
       update_cache: yes
@@ -23,6 +24,7 @@
       dest: ~/github/z.lua
 
   - name: Install tmuxp
+    become: true
     apt:
-      repo: tmuxp
+      name: tmuxp
       update_cache: yes

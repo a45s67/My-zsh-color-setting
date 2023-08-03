@@ -1,5 +1,6 @@
 ---
   - name: Install curl
+    become: true
     apt:
       name: curl
       update_cache: yes

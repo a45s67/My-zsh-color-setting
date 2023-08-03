@@ -1,5 +1,6 @@
 ---
   - name: Install git
+    become: true
     apt:
       name: git
       update_cache: yes

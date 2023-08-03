@@ -1,15 +1,18 @@
 ---
   - name: Install unzip
+    become: true
     apt:
       name: unzip
       update_cache: yes
 
   - name: Install build-essential
+    become: true
     apt:
       name: build-essential
       update_cache: yes
 
   - name: Install libs for building tmux
+    become: true
     apt:
       name: 
         - libevent-dev 

@@ -1,9 +1,11 @@
 ---
   - name: Set source of nodejs
+    become: yes
     shell: |
      curl -fsSL https://deb.nodesource.com/setup_18.x | bash - 
 
   - name: Install nodejs
+    become: true
     apt:
       name: nodejs
       update_cache: yes

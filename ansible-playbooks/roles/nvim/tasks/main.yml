@@ -1,9 +1,21 @@
 ---
+  - name: Install libfuse2 (requirements to run AppImage)
+    become: yes
+    apt:
+      name: libfuse2
+
+  - name: Download nvim 
+    get_url:
+      url: https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+      dest: /tmp/nvim
+
   - name: Install nvim
-    shell: |
-      curl -L https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o /tmp/nvim.appimage
-      chmod u+x /tmp/nvim.appimage
-      mv /tmp/nvim.appimage /usr/bin/nvim
+    become: yes
+    ansible.builtin.copy:
+      remote_src: yes
+      src: /tmp/nvim
+      dest: /usr/bin/nvim
+      mode: '0755'
 
   - name: Install vim-plug
     shell: |

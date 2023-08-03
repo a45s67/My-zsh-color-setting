@@ -16,9 +16,16 @@
         path: "~/github"
         state: directory
 
+- name: Initial apt
+  hosts: all
+  tasks:
+    - name: apt update
+      become: true
+      apt:
+        update_cache: yes
+
 - name: Installing
   hosts: all
-  become: yes
   roles:
     - nvim
     - zsh
