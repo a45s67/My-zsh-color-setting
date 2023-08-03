@@ -1,5 +1,6 @@
 ---
   - name: Clean gvm files
+    become: true
     file:
       path: ~/.gvm
       state: absent

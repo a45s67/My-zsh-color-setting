@@ -6,12 +6,10 @@
 
   - name: Install nvim
     become: yes
-    become_user: root
     ansible.builtin.copy:
+      remote_src: yes
       src: /tmp/nvim
       dest: /usr/bin/nvim
-      owner: root
-      group: root
       mode: '0755'
 
   - name: Install vim-plug

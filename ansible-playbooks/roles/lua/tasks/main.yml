@@ -1,5 +1,6 @@
 ---
   - name: Install Lua
+    become: true
     apt:
       name: lua5.3
       update_cache: yes
