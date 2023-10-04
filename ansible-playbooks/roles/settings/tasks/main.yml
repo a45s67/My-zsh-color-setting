@@ -16,6 +16,13 @@
       - '.tmux.conf.local'
       - '.zprofile'
 
+  - name: Set dotfiles (editor, IDE)
+    file:
+      src: '~/github/zsh-tmux-setting/dotfiles/biome.json'
+      dest: '~/biome.json'
+      state: link
+      force: yes
+
   - name: Set configure files (nvim)
     git:
       repo: https://github.com/a45s67/nvim-note.git
