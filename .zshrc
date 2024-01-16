@@ -123,6 +123,7 @@ alias py='python3'
 alias j='z'
 alias t='tmux -2'
 alias lg='lazygit'
+alias n='nnn'
 alias win-dev='tmuxp load win-dev'
 
 # laravel
@@ -157,3 +158,16 @@ export VISUAL=nvim
 export EDITOR="$VISUAL"
 # Set true color: https://askubuntu.com/questions/1309068/zsh-true-color-disabled-on-wsl2
 export COLORTERM=truecolor
+
+# cudnn setting to solve that libcuda.so is not found
+export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
+export PATH="$HOME/.phpenv/bin:$PATH"
+eval "$(phpenv init -)"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# nnn settings
+export NNN_ZLUA=~/github/z.lua/z.lua
+export NNN_PLUG='f:finder;o:fzopen;d:diffs;t:nmount;v:imgview;p:preview-tui'
+export NNN_FIFO=/tmp/nnn_fifo
